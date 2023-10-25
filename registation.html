@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.8.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="style.js"></script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</head>
+<body>
+    <!-- header -->
+    <section>
+        <!-- navber -->
+    <div class="flex justify-between  p-4 items-center">
+     <!-- logo -->
+     <div>
+             <img  onclick="redirectToAnotherPage()" src="./images/logo.png" alt="">
+     </div>
+   <div>
+     <ul class="flex gap-4 text-2xl ">
+         <li  class="hover:text-red-600"><a   href="index.html">Home</a></li>
+         <li class="hover:text-red-600"><a href="shop.html">Shop</a></li>
+         <li class="hover:text-red-600"><a href="blogs.html">Blog</a></li>
+         <li class="hover:text-red-600"><a href="">About</a></li>
+         <li class="hover:text-red-600"><a href="login.html">Contact</a></li>
+     </ul>
+   </div>
+   <div>
+
+   </div>
+
+    </div>
+ </section>
+
+
+  <main>
+    <section class="bg-gray-100 ">
+
+       <div class="flex justify-around gap-5 h-screen pt-28">
+
+        <div>
+            <img src="./images//latest//login.png" alt="">
+
+        </div>
+
+        <div>
+            <div class="bg-white p-8 rounded shadow-lg w-96">
+                <h1 class="text-2xl font-semibold mb-4 text-center">Registration</h1>
+                <form id="registrationForm" onsubmit="handleRegistration(event)">
+                    <div class="mb-4">
+                        <label for="name" class="text-gray-600">Name:</label>
+                        <input type="text" id="name" placeholder="Your name" name="name" class="w-full border border-gray-300 p-2 rounded" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="text-gray-600">Email:</label>
+                        <input type="email" id="email" placeholder="Your email" name="email" class="w-full border border-gray-300 p-2 rounded" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="text-gray-600">Password:</label>
+                        <input type="password" id="password" placeholder="Password" name="password" class="w-full border border-gray-300 p-2 rounded" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="confirmPassword" class="text-gray-600">Confirm Password:</label>
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password" name="confirmPassword" class="w-full border border-gray-300 p-2 rounded" required>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition duration-300">Registration</button>
+                </form>
+    
+                <p class="mt-5 text-center">Or Sign In with</p>
+                <div class="flex gap-3 items-center justify-center mt-3">
+                    <img src="./images//latest/google 1.jpg" alt="">
+                    <img src="./images//latest/bx_bxl-facebook.jpg" alt="">
+                    <img src="./images//latest/bx_bxl-linkedin.jpg" alt="">
+    
+                </div>
+    
+                <p class="mt-5">Already have an account? Please <a class="text-red-700" href="login.html">Login</a></p>
+            </div>
+        </div>
+
+       </div>
+
+
+    </section>
+  </main>
+
+
+
+  <script>
+    function handleRegistration(event) {
+        event.preventDefault(); 
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (password !== confirmPassword) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Passwords do not match',
+                text: 'Please try again.',
+            });
+        } else {
+           
+            if (password.length < 6) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Password is too short',
+                    text: 'Password must be at least 6 characters long.',
+                });
+            } else {
+            
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registration Successful',
+                    text: 'You are now registered!',
+                });
+
+             
+                window.location.href = 'index.html';
+
+                
+                console.log('Name:', name);
+                console.log('Email:', email);
+                console.log('Password:', password);
+                console.log('Confirm Password:', confirmPassword);
+            }
+        }
+    }
+</script>
+
+    
+</body>
+</html>

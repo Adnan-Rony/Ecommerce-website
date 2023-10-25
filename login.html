@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.8.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="style.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <!-- header -->
+    <section>
+        <!-- navber -->
+    <div class="flex justify-between  p-4 items-center">
+     <!-- logo -->
+     <div>
+             <img  onclick="redirectToAnotherPage()" src="./images/logo.png" alt="">
+     </div>
+   <div>
+     <ul class="flex gap-4 text-2xl ">
+         <li  class="hover:text-red-600"><a   href="index.html">Home</a></li>
+         <li class="hover:text-red-600"><a href="shop.html">Shop</a></li>
+         <li class="hover:text-red-600"><a href="blogs.html">Blog</a></li>
+         <li class="hover:text-red-600"><a href="">About</a></li>
+         <li class="hover:text-red-600"><a href="">Contact</a></li>
+     </ul>
+   </div>
+   <div>
+
+   </div>
+
+    </div>
+ </section>
+
+
+  <main>
+    <section class=" bg-gray-100  h-screen   pt-28 ">
+
+       <div class="flex justify-around gap-5 items-center">
+
+        <div>
+            <img src="./images/latest/login.png" alt="">
+        </div>
+
+        <div class="bg-white p-8 rounded shadow-lg w-96">
+           
+            <h1 class="text-2xl font-semibold mb-4 text-center">Login</h1>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-600">Email:</label>
+                    <input type="email" id="email" name="email" class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-400" required>
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-gray-600">Password:</label>
+                    <input type="password" id="password" name="password" class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-400" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition duration-300">Login</button>
+            </form>
+                        <p class="mt-5 text-center">Or Sign In with</p>
+                        <div class="flex gap-3 items-center justify-center mt-3">
+                            <img src="./images//latest/google 1.jpg" alt="">
+                            <img src="./images//latest/bx_bxl-facebook.jpg" alt="">
+                            <img src="./images//latest/bx_bxl-linkedin.jpg" alt="">
+
+                        </div>
+            <p class="mt-5 text-center">New here? please <a class="text-red-700" href="registation.html">
+                Register
+
+            </a> </p>
+        </div>
+
+       </div>
+
+
+
+    </section>
+  </main>
+
+
+  <script>
+    function handleLogin(event) {
+        event.preventDefault(); 
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+    
+        console.log('Email:', email);
+        console.log('Password:', password);
+    }
+</script>
+
+    
+</body>
+</html>
