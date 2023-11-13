@@ -40,7 +40,7 @@
   <main>
     <section class="bg-gray-100 ">
 
-       <div class="flex justify-around gap-5 h-screen pt-28">
+       <div class="flex justify-around gap-5 h-screen items-center pt-28">
 
         <div>
             <img src="./images//latest//login.png" alt="">
@@ -67,7 +67,7 @@
                         <label for="confirmPassword" class="text-gray-600">Confirm Password:</label>
                         <input type="password" id="confirmPassword" placeholder="Confirm Password" name="confirmPassword" class="w-full border border-gray-300 p-2 rounded" required>
                     </div>
-                    <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition duration-300">Registration</button>
+                    <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Registration</button>
                 </form>
     
                 <p class="mt-5 text-center">Or Sign In with</p>
@@ -105,6 +105,8 @@
                 title: 'Passwords do not match',
                 text: 'Please try again.',
             });
+            // alert("Passwords do not match")
+            
         } else {
            
             if (password.length < 6) {
@@ -113,6 +115,7 @@
                     title: 'Password is too short',
                     text: 'Password must be at least 6 characters long.',
                 });
+                // alert("Password must be at least 6 characters long")
             } else {
             
                 Swal.fire({
@@ -120,6 +123,7 @@
                     title: 'Registration Successful',
                     text: 'You are now registered!',
                 });
+                // alert("Registration Successful")
 
              
                 window.location.href = 'index.html';

@@ -1,11 +1,26 @@
 
 
-//home
+// //home
 function redirectToAnotherPage() {
-    // Define the URL of the target page
+   
     var targetPageURL = 'index.html';
     
-    // Redirect the user to the target page
+    
+    window.location.href = targetPageURL;
+}
+function blogs() {
+   
+    var targetPageURL = 'blogs.html';
+    
+    
+    window.location.href = targetPageURL;
+
+}
+function shop() {
+   
+    var targetPageURL = 'shop.html';
+    
+    
     window.location.href = targetPageURL;
 }
 
@@ -13,17 +28,6 @@ function redirectToAnotherPage() {
 
 
 
-    //blogs
-
-    function blogs() {
-       
-        const targetPageURL = 'blogs.html';
-       
-        
-       
-        window.location.href = targetPageURL;
-        // return false;
-    }
 
 
 
@@ -41,7 +45,7 @@ function redirectToAnotherPage() {
 
        
 
-
+            
         // console.log(data.parentNode.childNodes[3].innerText);
 
         const ProductsName=data.parentNode.childNodes[3].innerText
