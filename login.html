@@ -16,14 +16,15 @@
     <div class="flex justify-between  p-4 items-center">
     
      <div>
-             <img  onclick="redirectToAnotherPage()" src="./images/logo.png" alt="">
+        <img onclick="redirectToAnotherPage()" class="w-24  "  src="./images/about//2-removebg-preview.png" alt="">
+             <!-- <img  onclick="redirectToAnotherPage()" src="./images/logo.png" alt=""> -->
      </div>
    <div>
      <ul class="flex gap-4 text-2xl ">
          <li  class="hover:text-red-600"><a   href="index.html">Home</a></li>
          <li class="hover:text-red-600"><a href="shop.html">Shop</a></li>
          <li class="hover:text-red-600"><a href="blogs.html">Blog</a></li>
-         <li class="hover:text-red-600"><a href="">About</a></li>
+         <li class="hover:text-red-600"><a href="about.html">About</a></li>
          <li class="hover:text-red-600"><a href="">Contact</a></li>
      </ul>
    </div>
@@ -56,7 +57,7 @@
                     <label for="password" class=" text-gray-600">Password:</label>
                     <input type="password" id="password" name="password" class="w-full border border-gray-300 p-2 rounded " required>
                 </div>
-                <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 ">Login</button>
+                <button onclick="handlesubmit()" type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 ">Login</button>
             </form>
                         <p class="mt-5 text-center">Or Sign In with</p>
                         <div class="flex gap-3 items-center justify-center mt-3">
@@ -89,6 +90,13 @@
     
         console.log('Email:', email);
         console.log('Password:', password);
+    }
+    function handlesubmit(){
+        Swal.fire({
+                    icon: 'success',
+                    title: 'Registration Successful',
+                    text: 'You are now registered!',
+                });
     }
 </script>
 
